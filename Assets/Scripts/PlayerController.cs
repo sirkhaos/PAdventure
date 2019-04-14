@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
     private const string lastHorizontal = "LastHorizontal";
     private const string lastVertical = "LastVertical";
     private const string walkingState = "Walking";
-    
+
+    private Rigidbody2D playerRigitbody;
+
     private Animator animator;
 
     private bool walking = false;
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        playerRigitbody = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -30,17 +34,24 @@ public class PlayerController : MonoBehaviour
         walking = false;
         if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f)
         {
-            this.transform.Translate(new Vector3(Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, 0, 0));
+            //this.transform.Translate(new Vector3(Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, 0, 0));
+            playerRigitbody.velocity = new Vector2(Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, playerRigitbody.velocity.y);
             walking = true;
             lastMovement = new Vector2(Input.GetAxisRaw(horizontal), 0);
         }
         if (Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5f)
         {
-            this.transform.Translate(new Vector3(0, Input.GetAxisRaw(vertical) * speed * Time.deltaTime, 0));
+            //this.transform.Translate(new Vector3(0, Input.GetAxisRaw(vertical) * speed * Time.deltaTime, 0));
+            playerRigitbody.velocity = new Vector2(playerRigitbody.velocity.x, Input.GetAxisRaw(vertical) * speed * Time.deltaTime);
             walking = true;
             lastMovement = new Vector2(0, Input.GetAxisRaw(vertical));
         }
-        
+
+        if (!walking)
+        {
+            playerRigitbody.velocity = Vector2.zero;
+        }
+
         animator.SetFloat(horizontal, Input.GetAxisRaw(horizontal));
         animator.SetFloat(vertical, Input.GetAxisRaw(vertical));
         animator.SetBool(walkingState, walking);
