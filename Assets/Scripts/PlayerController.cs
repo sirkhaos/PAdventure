@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private const string lastHorizontal = "LastHorizontal";
     private const string lastVertical = "LastVertical";
     private const string walkingState = "Walking";
-
+    
     private Animator animator;
 
     private bool walking = false;
@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
             walking = true;
             lastMovement = new Vector2(0, Input.GetAxisRaw(vertical));
         }
+        
         animator.SetFloat(horizontal, Input.GetAxisRaw(horizontal));
         animator.SetFloat(vertical, Input.GetAxisRaw(vertical));
         animator.SetBool(walkingState, walking);
