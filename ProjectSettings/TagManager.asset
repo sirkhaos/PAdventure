@@ -53,3 +53,6 @@ TagManager:
   - name: player
     uniqueID: 3866757877
     locked: 0
+  - name: roof
+    uniqueID: 1030836609
+    locked: 0
