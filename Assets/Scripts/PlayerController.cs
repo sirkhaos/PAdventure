@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D playerRigitbody;
     private Animator animator;
-    
+
     private bool walking = false;
-    private Vector2 lastMovement = Vector2.zero;
+    public Vector2 lastMovement = Vector2.zero;
 
     //player esta creado
     public static bool playerCreated;
