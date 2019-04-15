@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     private const string walkingState = "Walking";
 
     private Rigidbody2D playerRigitbody;
-
     private Animator animator;
-
+    
     private bool walking = false;
     private Vector2 lastMovement = Vector2.zero;
+
+    //player esta creado
+    public static bool playerCreated;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,15 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         playerRigitbody = GetComponent<Rigidbody2D>();
 
+        if (!playerCreated)
+        {
+            playerCreated = true;
+            DontDestroyOnLoad(this.transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
