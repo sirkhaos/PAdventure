@@ -9366,6 +9366,11 @@ PrefabInstance:
       propertyPath: newPlaceName
       value: primerScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1561248729831749366, guid: ce380cb731122d749a25b6095332398f,
+        type: 3}
+      propertyPath: goToPlaceName
+      value: HorfanatoFront
+      objectReference: {fileID: 0}
     - target: {fileID: 1455572851055118215, guid: ce380cb731122d749a25b6095332398f,
         type: 3}
       propertyPath: m_Offset.y
@@ -9459,6 +9464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingDirection.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899567004460210248, guid: 62d3919fc9aa54d4c86a0f07439ea37b,
+        type: 3}
+      propertyPath: placeName
+      value: Horfanato
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62d3919fc9aa54d4c86a0f07439ea37b, type: 3}

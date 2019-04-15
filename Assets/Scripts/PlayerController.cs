@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private bool walking = false;
     public Vector2 lastMovement = Vector2.zero;
+    public string nextPlaceName;
 
     //player esta creado
     public static bool playerCreated;
