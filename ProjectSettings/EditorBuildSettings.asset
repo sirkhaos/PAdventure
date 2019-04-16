@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/primerScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/House1.unity
+    path: Assets/Scenes/Orfanato.unity
     guid: 76b346a65c1ef864da5f509a046caab7
+  - enabled: 1
+    path: Assets/Scenes/HouseHerrero.unity
+    guid: e1d1a6a3e97486a4f899704730e5f5ee
+  - enabled: 1
+    path: Assets/Scenes/HouseAlcalde.unity
+    guid: 3d5ecb8a35070264996d15c4b23e5117
   m_configObjects: {}
