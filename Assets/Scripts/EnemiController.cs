@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class EnemiController : MonoBehaviour
 {
-    public float speed = 150.0f;
+    public float enemySpeed = 1.0f;
+
+    private Animator enemyAnimator;
+    private Rigidbody2D enemyRigidbody;
+
+    private bool isMoving;
+
+    public float timeBetweenSteps;
+    private float timeBetweenStepsCounter;
+
+    public float timeToMakeStep;
+    private float timeToMakeStepCounter;
+
+    public Vector2 directionToMakeStep;
 
     private const string vertical = "Vertical";
     private const string horizontal = "Horizontal";
@@ -12,39 +25,64 @@ public class EnemiController : MonoBehaviour
     private const string lastVertical = "LastVertical";
     private const string walkingState = "Walking";
 
-    private Animator animator;
-    private Rigidbody2D enemyRigidbody2d;
-
-    private bool walking = false;
-    private Vector2 lastMoviment= Vector2.zero;
-
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        enemyRigidbody2d = GetComponent<Rigidbody2D>();
+        enemyRigidbody = GetComponent<Rigidbody2D>();
+        enemyAnimator = GetComponent<Animator>();
+
+        timeBetweenStepsCounter = timeBetweenSteps;
+        timeToMakeStepCounter = timeToMakeStep;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        walking = false;
-        if (Mathf.Abs(enemyRigidbody2d.velocity.x) > 0.5f)
+        /*
+        isMoving = false;
+        if (Mathf.Abs(enemyRigidbody.velocity.x) > 0.5f)
         {
-            walking = true;
-            animator.SetFloat(horizontal, enemyRigidbody2d.velocity.x);
-            lastMoviment = enemyRigidbody2d.velocity;
+            isMoving = true;
+            enemyAnimator.SetFloat(horizontal, enemyRigidbody.velocity.x);
+            directionToMakeStep = enemyRigidbody.velocity;
         }
-        if (Mathf.Abs(enemyRigidbody2d.velocity.y) > 0.5f)
+        if (Mathf.Abs(enemyRigidbody.velocity.y) > 0.5f)
         {
-            walking = true;
-            animator.SetFloat(vertical, enemyRigidbody2d.velocity.y);
-            lastMoviment = enemyRigidbody2d.velocity;
+            isMoving = true;
+            enemyAnimator.SetFloat(vertical, enemyRigidbody.velocity.y);
+            directionToMakeStep = enemyRigidbody.velocity;
         }
 
-        animator.SetBool(walkingState, walking);
-        animator.SetFloat(lastHorizontal, lastMoviment.x);
-        animator.SetFloat(lastVertical, lastMoviment.y);
+        enemyAnimator.SetBool(walkingState, isMoving);
+        enemyAnimator.SetFloat(lastHorizontal, directionToMakeStep.x);
+        enemyAnimator.SetFloat(lastVertical, directionToMakeStep.y);
+        */
+
+        if (isMoving)
+        {
+            timeToMakeStepCounter -= Time.deltaTime;
+            enemyRigidbody.velocity = directionToMakeStep;
+            if (timeToMakeStepCounter < 0)
+            {
+                isMoving = false;
+                timeBetweenStepsCounter = timeBetweenSteps;
+                enemyRigidbody.velocity = Vector2.zero;
+            }
+        }
+        else
+        {
+            timeBetweenStepsCounter -= Time.deltaTime;
+            if (timeBetweenStepsCounter < 0)
+            {
+                isMoving = true;
+                timeToMakeStepCounter = timeToMakeStep;
+                directionToMakeStep = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)) * enemySpeed;
+                enemyAnimator.SetFloat(lastHorizontal, directionToMakeStep.x);
+                enemyAnimator.SetFloat(lastVertical, directionToMakeStep.y);    
+            }
+        }
+        enemyAnimator.SetFloat(horizontal, directionToMakeStep.x);
+        enemyAnimator.SetFloat(vertical, directionToMakeStep.y);
+        enemyAnimator.SetBool(walkingState, isMoving);
     }
 }
