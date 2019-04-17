@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4329646016758351788}
   - component: {fileID: 4329646016758351791}
+  - component: {fileID: 7481975914405483390}
   - component: {fileID: 4329646016758351789}
   - component: {fileID: 4329646016758351779}
   - component: {fileID: 4329646016758351776}
   - component: {fileID: 4329646016758351778}
-  - component: {fileID: 7481975914405483390}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -52,6 +52,19 @@ MonoBehaviour:
   timeBetweenSteps: 2
   timeToMakeStep: 1.5
   directionToMakeStep: {x: -1, y: 0}
+--- !u!114 &7481975914405483390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4329646016758351777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03bf2b2ea4e8bab4da9f924055d99255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!212 &4329646016758351789
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -156,16 +169,3 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0168252, y: -0.10095215}
   m_Size: {x: 0.31016636, y: 0.42794037}
   m_Direction: 0
---- !u!114 &7481975914405483390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4329646016758351777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03bf2b2ea4e8bab4da9f924055d99255, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToRevivePlayer: 2

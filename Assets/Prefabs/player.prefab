@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055273884478022703}
   - component: {fileID: 2055273884478022702}
+  - component: {fileID: 3043310424991157795}
   - component: {fileID: 2055273884478022696}
   - component: {fileID: 2055273884478022697}
   - component: {fileID: 2055273884478022701}
@@ -50,6 +51,20 @@ MonoBehaviour:
   speed: 120
   lastMovement: {x: 0, y: 0}
   nextPlaceName: 
+--- !u!114 &3043310424991157795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055273884478022698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370294278495aba4e9e4bfb3c1849a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  currentHealth: 0
 --- !u!212 &2055273884478022696
 SpriteRenderer:
   m_ObjectHideFlags: 0
