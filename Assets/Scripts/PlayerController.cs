@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 4.0f;
+    public float speed = 150.0f;
 
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
