@@ -76,7 +76,7 @@ public class EnemiController : MonoBehaviour
             {
                 isMoving = true;
                 timeToMakeStepCounter = timeToMakeStep;
-                directionToMakeStep = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)) * enemySpeed;
+                directionToMakeStep = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2)) * enemySpeed;
                 enemyAnimator.SetFloat(lastHorizontal, directionToMakeStep.x);
                 enemyAnimator.SetFloat(lastVertical, directionToMakeStep.y);    
             }
