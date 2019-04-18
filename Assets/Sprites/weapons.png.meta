@@ -7,8 +7,13 @@ TextureImporter:
     21300004: weaponsSword
     21300006: weaponsAxe
     21300008: weaponsStaf
+    21300010: Gema
+    21300012: Posion
+    21300014: Sword
+    21300016: Axe
+    21300018: Staff
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -50,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,105 +123,127 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weaponsGema
+      name: Gema
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 8
+        y: 4
+        width: 14
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 920d278d84702b14a802bf679bf02c15
+      spriteID: d91cddcae7f9dbb419bf9154a0bbcfd7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weaponsPosion
+      name: Posion
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 38
+        y: 4
+        width: 19
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37515a1f64d65e24e93044fcaced0749
+      spriteID: 5f39473a784c59f4a81ef8469c5aec9e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weaponsSword
+      name: Sword
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 69
+        y: 6
+        width: 23
+        height: 23
+      alignment: 9
+      pivot: {x: 0.16443932, y: 0.15865372}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08ee615fae9960e43a070bed0f3ee723
+      spriteID: 5c63e78b8aac8e143b8ab53c44b57b56
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weaponsAxe
+      name: Axe
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 101
+        y: 5
+        width: 26
+        height: 23
+      alignment: 9
+      pivot: {x: 0.20827572, y: 0.2859353}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5dc2b21c30456040a628bc2d3bd0726
+      spriteID: ebefe4289fe06024bac089096234e253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weaponsStaf
+      name: Staff
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 134
+        y: 5
+        width: 22
+        height: 23
+      alignment: 9
+      pivot: {x: 0.31249583, y: 0.29750636}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6b825d2254537a44b25f712d033a431
+      spriteID: 4d2691b26261613409b801058cced1db
       vertices: []
       indices: 
       edges: []
