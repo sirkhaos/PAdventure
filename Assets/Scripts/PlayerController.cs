@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 150.0f;
+    private float currentSpeed;
 
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
@@ -72,17 +73,18 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f)
             {
                 //this.transform.Translate(new Vector3(Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, 0, 0));
-                playerRigitbody.velocity = new Vector2(Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, playerRigitbody.velocity.y);
+                playerRigitbody.velocity = new Vector2(Input.GetAxisRaw(horizontal) * currentSpeed * Time.deltaTime, playerRigitbody.velocity.y);
                 walking = true;
                 lastMovement = new Vector2(Input.GetAxisRaw(horizontal), 0);
             }
             if (Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5f)
             {
                 //this.transform.Translate(new Vector3(0, Input.GetAxisRaw(vertical) * speed * Time.deltaTime, 0));
-                playerRigitbody.velocity = new Vector2(playerRigitbody.velocity.x, Input.GetAxisRaw(vertical) * speed * Time.deltaTime);
+                playerRigitbody.velocity = new Vector2(playerRigitbody.velocity.x, Input.GetAxisRaw(vertical) * currentSpeed * Time.deltaTime);
                 walking = true;
                 lastMovement = new Vector2(0, Input.GetAxisRaw(vertical));
             }
+            currentSpeed = Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f && Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5f ? speed / Mathf.Sqrt(2) : speed;
         }
         if (!walking)
         {
