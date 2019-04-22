@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 150.0f;
-    private float currentSpeed;
+    //private float currentSpeed;
 
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            /*
             if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f)
             {
                 //this.transform.Translate(new Vector3(Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, 0, 0));
@@ -85,6 +86,12 @@ public class PlayerController : MonoBehaviour
                 lastMovement = new Vector2(0, Input.GetAxisRaw(vertical));
             }
             currentSpeed = Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f && Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5f ? speed / Mathf.Sqrt(2) : speed;
+            */
+            if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f || Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5f) {
+                walking = true;
+                lastMovement = new Vector2(Input.GetAxisRaw(horizontal), Input.GetAxisRaw(vertical));
+                playerRigitbody.velocity = lastMovement.normalized * speed * Time.deltaTime;
+            }
         }
         if (!walking)
         {
