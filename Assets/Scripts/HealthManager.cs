@@ -6,8 +6,9 @@ public class HealthManager : MonoBehaviour
 {
     public int maxHealth;
 
+    /*
     [SerializeField]
-    private int currentHealth;
+    private */public int currentHealth;
 
     // Start is called before the first frame update
     void Start()
