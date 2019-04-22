@@ -2,10 +2,10 @@ fileFormatVersion: 2
 guid: 4c2fa979b378ced48a24bf3e169efa18
 TextureImporter:
   fileIDToRecycleName:
-    21300000: swing_0
-    21300002: swing_1
+    21300000: swing_big
+    21300002: swing_small
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -119,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: swing_0
+      name: swing_big
       rect:
         serializedVersion: 2
         x: 0
@@ -133,7 +133,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7dc015a43546f3449a3c08a4842df34
+      spriteID: 187f693dbbd00ca45807d5851905431a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing_small
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f95825b7cfd83643b1afddb80f3e766
       vertices: []
       indices: 
       edges: []
