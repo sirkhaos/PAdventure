@@ -66,6 +66,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  damageNumber: {fileID: 3512203491040688742, guid: 05d66f5a6b21e2040b71b7378ed0f8f1,
+    type: 3}
 --- !u!212 &4329646016758351789
 SpriteRenderer:
   m_ObjectHideFlags: 0
