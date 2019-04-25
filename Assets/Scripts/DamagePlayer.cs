@@ -13,9 +13,12 @@ public class DamagePlayer : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            collision.gameObject.GetComponent<HealthManager>().damgeCharacter(damage);
+            int totalDamage = damage;
+            CharacterStats stats = collision.gameObject.GetComponent<CharacterStats>();
+            totalDamage = totalDamage - stats.defLvl[stats.currentLevel] >= 0 ? totalDamage - stats.defLvl[stats.currentLevel] : 1;
+            collision.gameObject.GetComponent<HealthManager>().damgeCharacter(totalDamage);
             var clone = (GameObject)Instantiate(damageNumber, collision.transform.position, Quaternion.Euler(Vector3.zero));
-            clone.GetComponent<DamageNumber>().damagePoints = damage;
+            clone.GetComponent<DamageNumber>().damagePoints = totalDamage;
         }
     }
 }
