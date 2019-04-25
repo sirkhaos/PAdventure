@@ -22,7 +22,7 @@ public class CharacterStats : MonoBehaviour
             return;
         }
 
-        if (currentExp >= expToLevelUp[currentLevel - 1])
+        if (currentExp >= expToLevelUp[currentLevel])
         {
             currentLevel++;
         }

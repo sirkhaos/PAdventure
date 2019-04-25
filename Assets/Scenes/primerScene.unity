@@ -7571,7 +7571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevel: 0
   currentExp: 0
-  expToLevelUp: 
+  expToLevelUp: 000000000a000000140000003200000064000000c8000000f4010000e8030000d007000088130000
 --- !u!114 &547079838 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3043310424991157795, guid: c9490fe4fc39791409c585c36743587c,
