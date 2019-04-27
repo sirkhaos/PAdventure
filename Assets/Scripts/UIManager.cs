@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public Slider playerHealthBar;
     public Text playerHealthText;
     public HealthManager playerHealthManager;
+    public CharacterStats characterstats;
+    public Text lvlTxt;
     // Update is called once per frame
     void Update()
     {
@@ -21,5 +23,8 @@ public class UIManager : MonoBehaviour
         sb.Append("/");
         sb.Append(playerHealthManager.maxHealth);
         playerHealthText.text = sb.ToString();
+        sb = new StringBuilder("Level: ");
+        sb.Append(characterstats.currentLevel);
+        lvlTxt.text = sb.ToString();
     }
 }
