@@ -7682,6 +7682,8 @@ MonoBehaviour:
   dialogBox: {fileID: 884476669}
   dialogText: {fileID: 1009649700}
   dialogActive: 0
+  dialogLines: []
+  currentDialogLine: 0
 --- !u!1 &538842309
 GameObject:
   m_ObjectHideFlags: 0
@@ -68893,7 +68895,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd7c76bba3c0cd4296c10f7c00db3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: Hola, como estas. El pueblo esta cerrado de momento.
+  dialog:
+  - hola!
+  - esta es villa conejo
+  - lo lamento esta cerrada la aldea de momento;
 --- !u!61 &1248238318
 BoxCollider2D:
   m_ObjectHideFlags: 0
