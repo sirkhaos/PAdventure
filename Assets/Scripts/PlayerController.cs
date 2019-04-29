@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public float attackTime;
     private float attackTimeCounter;
 
+    public bool playerTalking;
+
     //player esta creado
     public static bool playerCreated;
 
@@ -44,11 +46,17 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        playerTalking = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (playerTalking)
+        {
+            playerRigitbody.velocity = Vector2.zero;
+            return;
+        }
         walking = false;
 
         if (Input.GetMouseButtonDown(0))
