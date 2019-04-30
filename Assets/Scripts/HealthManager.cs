@@ -6,9 +6,7 @@ public class HealthManager : MonoBehaviour
 {
     public int maxHealth;
 
-    /*
-    [SerializeField]
-    private */public int currentHealth;
+    public int currentHealth;
 
     public bool flashActive;
     public float flashLength;
@@ -18,11 +16,15 @@ public class HealthManager : MonoBehaviour
 
     private SpriteRenderer characterRenderer;
 
+    public string enemyName;
+    private QuestManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         characterRenderer = GetComponent<SpriteRenderer>();
+        manager = FindObjectOfType<QuestManager>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class HealthManager : MonoBehaviour
         {
             if (gameObject.tag.Equals("Enemy"))
             {
+                manager.enemykelled = enemyName;
                 GameObject.Find("Player").GetComponent<CharacterStats>().AddExp(expWhenDefeated);
             }
             gameObject.SetActive(false);

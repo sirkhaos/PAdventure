@@ -6,7 +6,12 @@ public class QuestManager : MonoBehaviour
 {
     public Quest[] quests;
     public bool[] questCompleted;
+
     private DialogManager manager;
+
+    public string itemCollected;
+
+    public string enemykelled;
 
     // Start is called before the first frame update
     void Start()
