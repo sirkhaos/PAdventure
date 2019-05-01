@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     public bool playerTalking;
 
+    public Vector2 iniDir;
+
     //player esta creado
     public static bool playerCreated;
 
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
         playerTalking = false;
+        lastMovement = iniDir;
     }
 
     // Update is called once per frame
