@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 2055273884478022702}
   - component: {fileID: 3043310424991157795}
   - component: {fileID: 2055273884478022696}
+  - component: {fileID: 547079834}
   - component: {fileID: 2055273884478022697}
   - component: {fileID: 2055273884478022701}
   - component: {fileID: 2055273884478022700}
@@ -164,6 +165,8 @@ MonoBehaviour:
   lastMovement: {x: 0, y: 0}
   nextPlaceName: 
   attackTime: 0.5
+  playerTalking: 0
+  iniDir: {x: 1, y: 0}
 --- !u!114 &3043310424991157795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +181,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  flashActive: 0
+  flashLength: 1
+  expWhenDefeated: 0
+  enemyName: 
 --- !u!212 &2055273884478022696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -226,6 +233,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &547079834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055273884478022698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ada3a0d15ee36479dbf532696163f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 0
+  currentExp: 0
+  expToLevelUp: 000000000a000000140000003200000064000000c8000000f4010000e8030000d007000088130000
+  hpLvl: c8000000dc000000f0000000130100002c010000450100006801000090010000c2010000f4010000
+  strLvl: 00000000000000000100000002000000020000000300000003000000030000000500000006000000
+  defLvl: 00000000010000000100000001000000020000000200000002000000030000000300000005000000
 --- !u!61 &2055273884478022697
 BoxCollider2D:
   m_ObjectHideFlags: 0

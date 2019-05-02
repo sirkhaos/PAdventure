@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     //player esta creado
     public static bool playerCreated;
 
+    private SFXManager sfxmanager;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             playerCreated = true;
             DontDestroyOnLoad(this.transform.gameObject);
+            sfxmanager = FindObjectOfType<SFXManager>();
         }
         else
         {
@@ -68,6 +72,7 @@ public class PlayerController : MonoBehaviour
             attackTimeCounter = attackTime;
             playerRigitbody.velocity = Vector2.zero;
             animator.SetBool(attackingState, attacking);
+            sfxmanager.playerAttack.Play();
         }
 
         if (attacking)
